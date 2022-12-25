@@ -45,7 +45,7 @@ namespace AntAlgorythm
             }
         }
 
-        public double SumWeight((double Weight, double Pheromone)[,] matrix)
+        public double SumWeightShortestCycle((double Weight, double Pheromone)[,] matrix)
         {
             var path = GetShortestHamiltonCycle(matrix);
 
@@ -53,10 +53,6 @@ namespace AntAlgorythm
 
             for (int i = 0; i < path.Count; i++)
             {
-                /*_graphics.DrawLine(
-                        new Pen(new SolidBrush(color), width),
-                        _vertexPoints[vertexes[i] - 1],
-                        _vertexPoints[(vertexes[(i + 1) % vertexes.Count] - 1)]);*/
 
                 result += matrix[path[i], path[(i + 1) % path.Count]].Weight;
             }

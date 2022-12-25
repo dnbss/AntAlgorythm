@@ -223,7 +223,7 @@ namespace AntAlgorythmWinForm
 
             shortestPathLabel.Text = String.Join("->", _shortestPath.Select(v => v + 1).ToList());
 
-            sumWeightLabel.Text = ((int)algorythm.SumWeight(_matrix)).ToString();
+            sumWeightLabel.Text = ((int)algorythm.SumWeightShortestCycle(_matrix)).ToString();
         }
         public void ResetPheromones()
         {
